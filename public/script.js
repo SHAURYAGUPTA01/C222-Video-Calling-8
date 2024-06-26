@@ -111,7 +111,7 @@ $(function () {
         const to = prompt("Enter the email address")
         let data = {
             url: window.location.href,
-            to: to
+            to : "shauryagupta0305@gmail.com"
         }
         $.ajax({
             url: "/send-mail",
