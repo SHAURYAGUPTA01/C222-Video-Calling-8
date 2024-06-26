@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Chat App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- PeerJS -->
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+
+    <script>
+        const ROOM_ID = "<%= roomId %>";
+    </script>
+
+</head>
+
+<body>
+    <div class="row" style="overflow: hidden;">
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center p-3" style="background-color: #1d2735;">
+            <div class="header_back">
+                <i class="fas fa-angle-left"></i>
+            </div>
+            <h3 class='text-white'>Video Chat</h3>
+        </div>
+    </div>
+    <div class="row main">
+        <div class="col-sm-12 col-md-12 col-lg-9 left-window">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12" style="height: 81vh; background-color: #171e2a;"
+                    id="video_grid">
+                    <!-- Video Streams -->
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12 options">
+                    <!-- Icons -->
+                    <div id="stop_video" class="options_button">
+                        <i class="fa fa-video-camera"></i>
+                    </div>
+                    <div id="mute_button" class="options_button">
+                        <i class="fa fa-microphone"></i>
+                    </div>
+                    <div id="show_chat" class="options_button">
+                        <i class="fa fa-comment"></i>
+                    </div>
+                    <div id = "invite_button" class = "options_button">
+                        <i class = "fas fa-user-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-3 right-window">
+            <div class="row" class="main-chat-window">
+                <div class="col-sm-12 col-md-12 col-lg-12 messages" style="height: 81vh; background-color: #242f41;">
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12" style="background-color: #242f41;">
+                    <div class="main_message_container">
+                        <input id="chat_message" type="text" autocomplete="off" placeholder="Type message here...">
+                        <div id="send" class="options_button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="script.js"></script>
+
+</html>
